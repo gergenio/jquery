@@ -1,0 +1,84 @@
+<html>
+<head>
+<script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+</head>
+<script>
+$(document).ready(function()
+{
+	$("#ocultar").click(function(event)
+	{
+		event.preventDefault();
+		$("#capaefectos").fadeOut(2000,
+		function()
+		{
+			$("#capaefectos2").hide("slow",
+			function()
+			{
+				$("#capaefectos3").slideToggle(1000,
+				function()
+				{
+					$("#capaefectos4").slideUp(1000)
+				}
+				);
+			}
+			);
+		}
+		);
+	}
+	);
+	
+	
+	$("#mostrar").click(function(event)
+	{
+		event.preventDefault();
+		$("#capaefectos").show(1000,
+		function()
+		{
+			$("#capaefectos2").show(1000,
+			function()
+			{
+				$("#capaefectos3").show(1000,
+				function()
+				{
+					$("#capaefectos4").fadeIn(3000,0.2)
+				}
+				);
+			}
+			);
+		}
+		);
+	}
+	);
+}
+);
+</script>
+<body>
+<div id="capaefectos" style="background-color: #cc7700; color:fff; padding:10px;">
+CAPA 1
+<br>
+<br>
+12345678910
+</div>
+<div id="capaefectos2" style="background-color: green; color:fff; padding:10px;">
+CAPA 2
+<br>
+<br>
+12345678910
+</div>
+<div id="capaefectos3" style="background-color: blue; color:fff; padding:10px;">
+CAPA 3
+<br>
+<br>
+12345678910
+</div>
+<div id="capaefectos4" style="background-color:red; color:fff; padding:10px;">
+CAPA 4
+<br>
+<br>
+12345678910
+</div>
+<a href="#" id="ocultar">Ocultar la capa</a>
+<a href="#" id="mostrar">Mostrar la capa</a> 
+
+</body>
+</html>
